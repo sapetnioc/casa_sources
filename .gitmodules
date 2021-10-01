@@ -100,9 +100,6 @@
 [submodule "preclinical-imaging-iam"]
 	path = preclinical-imaging-iam
 	url = https://bioproj.extra.cea.fr/git/preclinical-imaging-iam
-[submodule "primatologist-gpl"]
-	path = primatologist-gpl
-	url = https://bioproj.extra.cea.fr/git/primatologist-gpl
 [submodule "qualicati"]
 	path = qualicati
 	url = https://github.com/cati-neuroimaging/qualicati
