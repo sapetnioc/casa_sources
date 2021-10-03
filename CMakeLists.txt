@@ -1,4 +1,4 @@
-cmake_minimum_required( VERSION 2.6 )
+cmake_minimum_required( VERSION 3.0 )
 
 # Replacement of BRAINVISA_PROJECT
 macro( THIS_PROJECT project_name )
@@ -25,6 +25,8 @@ endmacro()
 project(casa_source)
 
 set( BRAINVISA_COMPONENTS
+    brainvisa-cmake
+    brainvisa-share
     soma-base
     soma-io
     aims-free
@@ -32,16 +34,20 @@ set( BRAINVISA_COMPONENTS
     anatomist-free
     anatomist-gpl
     soma-workflow
+    capsul
     axon
-    bioprocessing
+    morphologist-gpl
+    morphologist-nonfree
+    morphologist-ui
+    sulci-nonfree
+    morpho-deepsulci
+    morphologist-baby
     brainrat-gpl
     brainrat-private
+    bioprocessing
     3dns-private
-    brainvisa-cmake
     brainvisa_freesurfer
-    brainvisa-share
     brainvisa-spm
-    capsul
     casa-distro
     # cati-auth
     catidb-client
@@ -53,11 +59,6 @@ set( BRAINVISA_COMPONENTS
     disco
     highres-cortex
     longitudinal_pipelines
-    morpho-deepsulci
-    morphologist-baby
-    morphologist-gpl
-    morphologist-nonfree
-    morphologist-ui
     nuclear_imaging-gpl
     nuclear_imaging-nonfree
     populse_db
@@ -66,23 +67,25 @@ set( BRAINVISA_COMPONENTS
     rsfmri
     sacha-gpl
     sacha-nonfree
-    sulci-nonfree
     web
     whasa-gpl
     whasa-nonfree
 
     CACHE STRING "Components list" FORCE )
-
+set( NO_BV_MAKER TRUE CACHE STRING "Compilation without using bv_maker command" FORCE )
 set( _BRAINVISA_COMPONENTS "${BRAINVISA_COMPONENTS}" CACHE STRING "BrainVISA components list" FORCE )
 
-set( CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/brainvisa-cmake/cmake" ${CMAKE_PREFIX_PATH} )
+list( INSERT CMAKE_PREFIX_PATH  0 "${CMAKE_BINARY_DIR}/cmake" "${CMAKE_SOURCE_DIR}/brainvisa-cmake/cmake" )
+list( INSERT CMAKE_MODULE_PATH 0 "${CMAKE_SOURCE_DIR}/brainvisa-cmake/cmake/modules" )
 find_package( brainvisa-cmake NO_POLICY_SCOPE )
 
 foreach( component ${BRAINVISA_COMPONENTS} )
     set( BRAINVISA_SOURCES_${component} "${CMAKE_SOURCE_DIR}/${component}" CACHE STRING "Sources directory for component ${component}" FORCE )
     BRAINVISA_READ_PROJECT_INFO("${BRAINVISA_SOURCES_${component}}")
     set( ${component}_VERSION "${BRAINVISA_PACKAGE_VERSION_MAJOR}.${BRAINVISA_PACKAGE_VERSION_MINOR}" )
-    set( ${component}_DIR "${CMAKE_BINARY_DIR}/share/${component}-${${component}_VERSION}/cmake" CACHE STRING "Directory used for find_package( ${component} )" FORCE )
+    set( ${component}_DIR "${BRAINVISA_SOURCES_${component}}/share/cmake" CACHE STRING "Directory used for find_package( ${component} )" FORCE )
+    file( MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/share/${component}-${${component}_VERSION}" )
+    execute_process( COMMAND ${CMAKE_COMMAND} -E create_symlink "../../cmake" "${CMAKE_BINARY_DIR}/share/${component}-${${component}_VERSION}/cmake" )
 endforeach()
 
 include( "${BRAINVISA_SOURCES_brainvisa-cmake}/cmake/brainvisa-compilation.cmake" )

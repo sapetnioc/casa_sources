@@ -1,0 +1,16 @@
+# Defines the following variables:
+#   @component@_VERSION_MAJOR
+#   @component@_VERSION_MINOR
+#   @component@_VERSION_PATCH
+#   @component@_VERSION
+#   @component_upper@_FOUND
+
+# Set version variables
+set( @component@_VERSION_MAJOR @BRAINVISA_PACKAGE_VERSION_MAJOR@ )
+set( @component@_VERSION_MINOR @BRAINVISA_PACKAGE_VERSION_MINOR@ )
+set( @component@_VERSION_PATCH @BRAINVISA_PACKAGE_VERSION_PATCH@ )
+set( @component@_VERSION ${@component@_VERSION_MAJOR}.${@component@_VERSION_MINOR}.${@component@_VERSION_PATCH} )
+
+find_package( PythonInterp REQUIRED )
+
+set( @component_upper@_FOUND true )

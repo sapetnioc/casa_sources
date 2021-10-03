@@ -1,0 +1,62 @@
+cmake_minimum_required( VERSION 2.6 )
+
+find_package( python REQUIRED )
+find_package( Sphinx )
+find_package( brainvisa-cmake REQUIRED )
+
+file( TO_CMAKE_PATH "@source_directory@" BRAINVISA_REAL_SOURCE_DIR )
+BRAINVISA_PROJECT()
+
+if( EXISTS "${BRAINVISA_REAL_SOURCE_DIR}/python" )
+    BRAINVISA_COPY_PYTHON_DIRECTORY( "${BRAINVISA_REAL_SOURCE_DIR}/python"
+                                     ${PROJECT_NAME} python
+                                     INSTALL_ONLY )
+else()
+    BRAINVISA_COPY_PYTHON_DIRECTORY( "${BRAINVISA_REAL_SOURCE_DIR}/@component_name@"
+                                     ${PROJECT_NAME} python/@component_name@
+                                     INSTALL_ONLY )
+endif()
+
+if( EXISTS "${BRAINVISA_REAL_SOURCE_DIR}/bin" )
+    BRAINVISA_COPY_DIRECTORY( "${BRAINVISA_REAL_SOURCE_DIR}/bin"
+                              bin
+                              ${PROJECT_NAME} )
+endif()
+
+if( EXISTS "${BRAINVISA_REAL_SOURCE_DIR}/share" )
+    BRAINVISA_COPY_DIRECTORY( "${BRAINVISA_REAL_SOURCE_DIR}/share"
+                              share/${PROJECT_NAME}-${BRAINVISA_PACKAGE_VERSION_MAJOR}.${BRAINVISA_PACKAGE_VERSION_MINOR}
+                              ${PROJECT_NAME} )
+endif()
+
+if( EXISTS "${BRAINVISA_REAL_SOURCE_DIR}/brainvisa" )
+    BRAINVISA_COPY_DIRECTORY( "${BRAINVISA_REAL_SOURCE_DIR}/brainvisa"
+                              brainvisa
+                              ${PROJECT_NAME} )
+endif()
+
+if( EXISTS "${BRAINVISA_REAL_SOURCE_DIR}/scripts" )
+    BRAINVISA_COPY_DIRECTORY( "${BRAINVISA_REAL_SOURCE_DIR}/scripts"
+                              scripts
+                              ${PROJECT_NAME} )
+endif()
+
+if( EXISTS "${BRAINVISA_REAL_SOURCE_DIR}/doc/source" )
+    BRAINVISA_GENERATE_SPHINX_DOC( "${BRAINVISA_REAL_SOURCE_DIR}/doc/source"
+        "share/doc/@component_name@-${BRAINVISA_PACKAGE_VERSION_MAJOR}.${BRAINVISA_PACKAGE_VERSION_MINOR}" )
+elseif( EXISTS "${BRAINVISA_REAL_SOURCE_DIR}/docs/source" )
+    BRAINVISA_GENERATE_SPHINX_DOC( "${BRAINVISA_REAL_SOURCE_DIR}/docs/source"
+        "share/doc/@component_name@-${BRAINVISA_PACKAGE_VERSION_MAJOR}.${BRAINVISA_PACKAGE_VERSION_MINOR}" )
+endif()
+
+if( EXISTS "${BRAINVISA_REAL_SOURCE_DIR}/etc" )
+    BRAINVISA_COPY_DIRECTORY( "${BRAINVISA_REAL_SOURCE_DIR}/etc"
+                              etc
+                              ${PROJECT_NAME} )
+endif()
+
+# tests
+
+@test_commands@
+
+UNSET( BRAINVISA_REAL_SOURCE_DIR )
