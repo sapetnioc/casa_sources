@@ -28,6 +28,7 @@
 [submodule "brainvisa-cmake"]
 	path = brainvisa-cmake
 	url = https://github.com/brainvisa/brainvisa-cmake
+	branch = bv_maker_killer
 [submodule "brainvisa_freesurfer"]
 	path = brainvisa_freesurfer
 	url = https://github.com/brainvisa/brainvisa_freesurfer
