@@ -1,0 +1,181 @@
+repositories:
+    3dns-private:
+        type: git
+        url: https://bioproj.extra.cea.fr/git/3dns-private
+        version: master
+    aims-free:
+        type: git
+        url: https://github.com/brainvisa/aims-free
+        version: master
+    aims-gpl:
+        type: git
+        url: https://github.com/brainvisa/aims-gpl
+        version: master
+    anatomist-free:
+        type: git
+        url: https://github.com/brainvisa/anatomist-free
+        version: master
+    anatomist-gpl:
+        type: git
+        url: https://github.com/brainvisa/anatomist-gpl
+        version: master
+    axon:
+        type: git
+        url: https://github.com/brainvisa/axon
+        version: master
+    bioprocessing:
+        type: git
+        url: https://bioproj.extra.cea.fr/git/bioprocessing
+        version: master
+    brainrat-gpl:
+        type: git
+        url: https://bioproj.extra.cea.fr/git/brainrat-gpl
+        version: master
+    brainrat-private:
+        type: git
+        url: https://bioproj.extra.cea.fr/git/brainrat-private
+        version: master
+    brainvisa-cmake:
+        type: git
+        url: https://github.com/brainvisa/brainvisa-cmake
+        version: bv_maker_killer
+    brainvisa-share:
+        type: git
+        url: https://github.com/brainvisa/brainvisa-share
+        version: master
+    brainvisa-spm:
+        type: git
+        url: https://github.com/brainvisa/brainvisa-spm
+        version: master
+    brainvisa_freesurfer:
+        type: git
+        url: https://github.com/brainvisa/brainvisa_freesurfer
+        version: master
+    capsul:
+        type: git
+        url: https://github.com/populse/capsul
+        version: master
+    casa-distro:
+        type: git
+        url: https://github.com/brainvisa/casa-distro
+        version: master
+    cati-auth:
+        type: git
+        url: https://github.com/cati-neuroimaging/cati-auth
+        version: main
+    catidb-client:
+        type: git
+        url: https://github.com/cati-neuroimaging/catidb-client
+        version: main
+    catidb-server:
+        type: git
+        url: https://github.com/cati-neuroimaging/catidb-server
+        version: main
+    constellation-gpl:
+        type: git
+        url: https://github.com/brainvisa/constellation-gpl
+        version: master
+    constellation-nonfree:
+        type: git
+        url: https://github.com/brainvisa/constellation-nonfree
+        version: master
+    cortical_surface-gpl:
+        type: git
+        url: https://github.com/brainvisa/cortical_surface-gpl
+        version: master
+    cortical_surface-nonfree:
+        type: git
+        url: https://github.com/brainvisa/cortical_surface-nonfree
+        version: master
+    disco:
+        type: git
+        url: https://bioproj.extra.cea.fr/git/brainvisa-disco
+        version: master
+    highres-cortex:
+        type: git
+        url: https://github.com/neurospin/highres-cortex
+        version: master
+    longitudinal_pipelines:
+        type: git
+        url: https://github.com/cati-neuroimaging/longitudinal_pipelines
+        version: master
+    morpho-deepsulci:
+        type: git
+        url: https://github.com/brainvisa/morpho-deepsulci
+        version: master
+    morphologist-baby:
+        type: git
+        url: https://bioproj.extra.cea.fr/git/brainvisa-t1mri/morphologist-baby
+        version: master
+    morphologist-gpl:
+        type: git
+        url: https://github.com/brainvisa/morphologist-gpl
+        version: master
+    morphologist-nonfree:
+        type: git
+        url: https://github.com/brainvisa/morphologist-nonfree
+        version: master
+    morphologist-ui:
+        type: git
+        url: https://github.com/brainvisa/morphologist
+        version: master
+    nuclear_imaging-gpl:
+        type: git
+        url: https://github.com/cati-neuroimaging/nuclear_imaging-gpl
+        version: master
+    nuclear_imaging-nonfree:
+        type: git
+        url: https://github.com/cati-neuroimaging/nuclear_imaging-nonfree
+        version: master
+    populse_db:
+        type: git
+        url: https://github.com/populse/populse_db
+        version: master
+    preclinical-imaging-iam:
+        type: git
+        url: https://bioproj.extra.cea.fr/git/preclinical-imaging-iam
+        version: master
+    qualicati:
+        type: git
+        url: https://github.com/cati-neuroimaging/qualicati
+        version: main
+    rsfmri:
+        type: git
+        url: https://github.com/cati-neuroimaging/rsfmri
+        version: master
+    sacha-gpl:
+        type: git
+        url: https://github.com/cati-neuroimaging/sacha-gpl
+        version: master
+    sacha-nonfree:
+        type: git
+        url: https://github.com/cati-neuroimaging/sacha-nonfree
+        version: master
+    soma-base:
+        type: git
+        url: https://github.com/populse/soma-base
+        version: master
+    soma-io:
+        type: git
+        url: https://github.com/brainvisa/soma-io
+        version: master
+    soma-workflow:
+        type: git
+        url: https://github.com/populse/soma-workflow
+        version: master
+    sulci-nonfree:
+        type: git
+        url: https://github.com/brainvisa/sulci-nonfree
+        version: master
+    web:
+        type: git
+        url: https://bioproj.extra.cea.fr/git/brainvisa-commu/web
+        version: master
+    whasa-gpl:
+        type: git
+        url: https://github.com/cati-neuroimaging/whasa-gpl
+        version: master
+    whasa-nonfree:
+        type: git
+        url: https://github.com/cati-neuroimaging/whasa-nonfree
+        version: master
