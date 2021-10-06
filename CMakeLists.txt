@@ -24,56 +24,20 @@ endmacro()
 
 project(casa_source)
 
-set( BRAINVISA_COMPONENTS
-    brainvisa-cmake
-    brainvisa-share
-    soma-base
-    soma-io
-    aims-free
-    aims-gpl
-    anatomist-free
-    anatomist-gpl
-    soma-workflow
-    capsul
-    axon
-    morphologist-gpl
-    morphologist-nonfree
-    morphologist-ui
-    sulci-nonfree
-    morpho-deepsulci
-    morphologist-baby
-    brainrat-gpl
-    brainrat-private
-    bioprocessing
-    3dns-private
-    brainvisa_freesurfer
-    brainvisa-spm
-    casa-distro
-    # cati-auth
-    catidb-client
-    # catidb-server
-    constellation-gpl
-    constellation-nonfree
-    cortical_surface-gpl
-    cortical_surface-nonfree
-    disco
-    highres-cortex
-    longitudinal_pipelines
-    nuclear_imaging-gpl
-    nuclear_imaging-nonfree
-    populse_db
-    preclinical-imaging-iam
-    qualicati
-    rsfmri
-    sacha-gpl
-    sacha-nonfree
-    web
-    whasa-gpl
-    whasa-nonfree
+# Read components list
+execute_process(COMMAND python read_components.py
+                WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+                OUTPUT_VARIABLE BRAINVISA_COMPONENTS
+                ERROR_VARIABLE stderr
+                RESULT_VARIABLE status)
 
-    CACHE STRING "Components list" FORCE )
+if( NOT ${status} EQUAL 0) 
+    message("ERROR while running ${CMAKE_SOURCE_DIR}/read_components.py")
+    message( FATAL_ERROR "${stderr}")
+endif()
+
 set( NO_BV_MAKER TRUE CACHE STRING "Compilation without using bv_maker command" FORCE )
-set( _BRAINVISA_COMPONENTS "${BRAINVISA_COMPONENTS}" CACHE STRING "BrainVISA components list" FORCE )
+# set( _BRAINVISA_COMPONENTS "${BRAINVISA_COMPONENTS}" CACHE STRING "BrainVISA components list" FORCE )
 
 list( INSERT CMAKE_PREFIX_PATH  0 "${CMAKE_BINARY_DIR}/cmake" "${CMAKE_SOURCE_DIR}/brainvisa-cmake/cmake" )
 list( INSERT CMAKE_MODULE_PATH 0 "${CMAKE_SOURCE_DIR}/brainvisa-cmake/cmake/modules" )

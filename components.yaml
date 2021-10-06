@@ -1,7 +1,57 @@
+    # soma-workflow
+    # capsul
+    # axon
+    # morphologist-gpl
+    # morphologist-nonfree
+    # morphologist-ui
+    # sulci-nonfree
+    # morpho-deepsulci
+    # morphologist-baby
+    # brainrat-gpl
+    # brainrat-private
+    # bioprocessing
+    # 3dns-private
+    # brainvisa_freesurfer
+    # brainvisa-spm
+    # casa-distro
+    # # cati-auth
+    # catidb-client
+    # # catidb-server
+    # constellation-gpl
+    # constellation-nonfree
+    # cortical_surface-gpl
+    # cortical_surface-nonfree
+    # disco
+    # highres-cortex
+    # longitudinal_pipelines
+    # nuclear_imaging-gpl
+    # nuclear_imaging-nonfree
+    # populse_db
+    # preclinical-imaging-iam
+    # qualicati
+    # rsfmri
+    # sacha-gpl
+    # sacha-nonfree
+    # web
+    # whasa-gpl
+    # whasa-nonfree
+
 repositories:
-    3dns-private:
+    brainvisa-cmake:
         type: git
-        url: https://bioproj.extra.cea.fr/git/3dns-private
+        url: https://github.com/brainvisa/brainvisa-cmake
+        version: bv_maker_killer
+    brainvisa-share:
+        type: git
+        url: https://github.com/brainvisa/brainvisa-share
+        version: master
+    soma-base:
+        type: git
+        url: https://github.com/populse/soma-base
+        version: master
+    soma-io:
+        type: git
+        url: https://github.com/brainvisa/soma-io
         version: master
     aims-free:
         type: git
@@ -19,13 +69,41 @@ repositories:
         type: git
         url: https://github.com/brainvisa/anatomist-gpl
         version: master
+    soma-workflow:
+        type: git
+        url: https://github.com/populse/soma-workflow
+        version: master
+    capsul:
+        type: git
+        url: https://github.com/populse/capsul
+        version: master
     axon:
         type: git
         url: https://github.com/brainvisa/axon
         version: master
-    bioprocessing:
+    morphologist-gpl:
         type: git
-        url: https://bioproj.extra.cea.fr/git/bioprocessing
+        url: https://github.com/brainvisa/morphologist-gpl
+        version: master
+    morphologist-nonfree:
+        type: git
+        url: https://github.com/brainvisa/morphologist-nonfree
+        version: master
+    morphologist-ui:
+        type: git
+        url: https://github.com/brainvisa/morphologist
+        version: master
+    sulci-nonfree:
+        type: git
+        url: https://github.com/brainvisa/sulci-nonfree
+        version: master
+    morpho-deepsulci:
+        type: git
+        url: https://github.com/brainvisa/morpho-deepsulci
+        version: master
+    morphologist-baby:
+        type: git
+        url: https://bioproj.extra.cea.fr/git/brainvisa-t1mri/morphologist-baby
         version: master
     brainrat-gpl:
         type: git
@@ -35,25 +113,21 @@ repositories:
         type: git
         url: https://bioproj.extra.cea.fr/git/brainrat-private
         version: master
-    brainvisa-cmake:
+    bioprocessing:
         type: git
-        url: https://github.com/brainvisa/brainvisa-cmake
-        version: bv_maker_killer
-    brainvisa-share:
-        type: git
-        url: https://github.com/brainvisa/brainvisa-share
+        url: https://bioproj.extra.cea.fr/git/bioprocessing
         version: master
-    brainvisa-spm:
+    3dns-private:
         type: git
-        url: https://github.com/brainvisa/brainvisa-spm
+        url: https://bioproj.extra.cea.fr/git/3dns-private
         version: master
     brainvisa_freesurfer:
         type: git
         url: https://github.com/brainvisa/brainvisa_freesurfer
         version: master
-    capsul:
+    brainvisa-spm:
         type: git
-        url: https://github.com/populse/capsul
+        url: https://github.com/brainvisa/brainvisa-spm
         version: master
     casa-distro:
         type: git
@@ -63,6 +137,7 @@ repositories:
         type: git
         url: https://github.com/cati-neuroimaging/cati-auth
         version: main
+        brainvisa-cmake: ignore
     catidb-client:
         type: git
         url: https://github.com/cati-neuroimaging/catidb-client
@@ -71,6 +146,7 @@ repositories:
         type: git
         url: https://github.com/cati-neuroimaging/catidb-server
         version: main
+        brainvisa-cmake: ignore
     constellation-gpl:
         type: git
         url: https://github.com/brainvisa/constellation-gpl
@@ -99,26 +175,6 @@ repositories:
         type: git
         url: https://github.com/cati-neuroimaging/longitudinal_pipelines
         version: master
-    morpho-deepsulci:
-        type: git
-        url: https://github.com/brainvisa/morpho-deepsulci
-        version: master
-    morphologist-baby:
-        type: git
-        url: https://bioproj.extra.cea.fr/git/brainvisa-t1mri/morphologist-baby
-        version: master
-    morphologist-gpl:
-        type: git
-        url: https://github.com/brainvisa/morphologist-gpl
-        version: master
-    morphologist-nonfree:
-        type: git
-        url: https://github.com/brainvisa/morphologist-nonfree
-        version: master
-    morphologist-ui:
-        type: git
-        url: https://github.com/brainvisa/morphologist
-        version: master
     nuclear_imaging-gpl:
         type: git
         url: https://github.com/cati-neuroimaging/nuclear_imaging-gpl
@@ -130,10 +186,6 @@ repositories:
     populse_db:
         type: git
         url: https://github.com/populse/populse_db
-        version: master
-    preclinical-imaging-iam:
-        type: git
-        url: https://bioproj.extra.cea.fr/git/preclinical-imaging-iam
         version: master
     qualicati:
         type: git
@@ -150,22 +202,6 @@ repositories:
     sacha-nonfree:
         type: git
         url: https://github.com/cati-neuroimaging/sacha-nonfree
-        version: master
-    soma-base:
-        type: git
-        url: https://github.com/populse/soma-base
-        version: master
-    soma-io:
-        type: git
-        url: https://github.com/brainvisa/soma-io
-        version: master
-    soma-workflow:
-        type: git
-        url: https://github.com/populse/soma-workflow
-        version: master
-    sulci-nonfree:
-        type: git
-        url: https://github.com/brainvisa/sulci-nonfree
         version: master
     web:
         type: git
