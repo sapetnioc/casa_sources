@@ -125,3 +125,5 @@ fast_brainvisa-share_copy.cmake
 include/
 python/
 share/
+brainvisa/
+scripts/
