@@ -1,0 +1,345 @@
+{
+    "groups": {
+        "anatomist": "projects needed for anatomist (aims, soma-io and dependencies)",
+        "opensource": "open source components",
+        "brainvisa": "public brainvisa distro",
+        "bvdev": "same as brainvisa but excludes restricted access projects (such as brainrat-private)",
+        "standard": "most useful projects. Includes internal, non-open projects, but not restricted ones (such as brainrat-private)",
+        "cea": "CEA (Neurospin/MirCen/SHFJ) distro including internal projects",
+        "cati_platform": "standard + CATI components",
+         "all": "all projects except those really not useful"
+    },
+    "components": {
+        "soma-workflow": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "brainrat-private": [
+            "all", 
+            "brainvisa", 
+            "cea"
+        ], 
+        "sacha-gpl": [
+            "all", 
+            "cati_platform", 
+            "catidb3_all"
+        ], 
+        "anatomist-free": [
+            "all", 
+            "anatomist", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "axon": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "morpho-deepsulci": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "brainvisa_freesurfer": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "capsul": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "datamind": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "aims-gpl": [
+            "all", 
+            "anatomist", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "anatomist-gpl": [
+            "all", 
+            "anatomist", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "whasa-nonfree": [
+            "all", 
+            "cati_platform", 
+            "catidb3_all"
+        ], 
+        "web": [
+            "all"
+        ], 
+        "preclinical-imaging-iam": [
+            "all"
+        ], 
+        "whasa-gpl": [
+            "all", 
+            "cati_platform", 
+            "catidb3_all"
+        ], 
+        "sacha-nonfree": [
+            "all", 
+            "cati_platform", 
+            "catidb3_all"
+        ], 
+        "brainrat-gpl": [
+            "all", 
+            "brainvisa", 
+            "cea"
+        ], 
+        "populse_db": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "qualicati": [
+            "cati_platform"
+        ], 
+        "morphologist-baby": [
+            "all", 
+            "cea", 
+            "standard"
+        ], 
+        "rsfmri": [
+            "all", 
+            "cati_platform"
+        ], 
+        "casa-distro": [
+            "all", 
+            "anatomist", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "brainvisa-spm": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "highres-cortex": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "constellation-nonfree": [
+            "all", 
+            "cea"
+        ], 
+        "3dns-private": [
+            "3dns"
+        ], 
+        "aims-til": [
+            "all", 
+            "anatomist", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "brainvisa-cmake": [
+            "all", 
+            "anatomist", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "morphologist-nonfree": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "standard"
+        ], 
+        "aims-free": [
+            "all", 
+            "anatomist", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "primatologist-gpl": [
+            "all", 
+            "brainvisa", 
+            "cea"
+        ], 
+        "cortical_surface-nonfree": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "standard"
+        ], 
+        "nuclear_imaging-gpl": [
+            "all", 
+            "cati_platform"
+        ], 
+        "cortical_surface-gpl": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "tms": [
+            "all"
+        ], 
+        "constellation-gpl": [
+            "all", 
+            "cea"
+        ], 
+        "sulci-nonfree": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "standard"
+        ], 
+        "nuclear_imaging-nonfree": [
+            "all", 
+            "cati_platform"
+        ], 
+        "soma-base": [
+            "all", 
+            "anatomist", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "catidb-client": [
+            "cati_platform"
+        ], 
+        "bioprocessing": [
+            "all", 
+            "cea"
+        ], 
+        "disco": [
+            "all", 
+            "cea"
+        ], 
+        "brainvisa-share": [
+            "all", 
+            "anatomist", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "snapbase": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "morphologist-ui": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "longitudinal_pipelines": [
+            "all", 
+            "cati_platform"
+        ], 
+        "morphologist-gpl": [
+            "all", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ], 
+        "soma-io": [
+            "all", 
+            "anatomist", 
+            "brainvisa", 
+            "bvdev", 
+            "cati_platform", 
+            "cea", 
+            "opensource", 
+            "standard"
+        ]
+    }
+}

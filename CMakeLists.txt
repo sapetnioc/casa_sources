@@ -1,5 +1,12 @@
 cmake_minimum_required( VERSION 3.0 )
 
+project( casa_source C CXX Fortran )
+
+list( INSERT CMAKE_PREFIX_PATH  0 "${CMAKE_BINARY_DIR}/cmake" "${CMAKE_SOURCE_DIR}/brainvisa-cmake/cmake" )
+list( INSERT CMAKE_MODULE_PATH 0 "${CMAKE_SOURCE_DIR}/brainvisa-cmake/cmake/modules" )
+
+find_package( python 3 )
+
 # Replacement of BRAINVISA_PROJECT
 macro( THIS_PROJECT project_name )
     if( CMAKE_MAJOR_VERSION GREATER 2 )
@@ -21,11 +28,8 @@ macro( THIS_PROJECT project_name )
     set( CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib" )
 endmacro()
 
-
-project(casa_source)
-
 # Read components list
-execute_process(COMMAND python read_components.py
+execute_process(COMMAND ${PYTHON_EXECUTABLE} read_components.py
                 WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
                 OUTPUT_VARIABLE BRAINVISA_COMPONENTS
                 ERROR_VARIABLE stderr
@@ -39,9 +43,10 @@ endif()
 set( NO_BV_MAKER TRUE CACHE STRING "Compilation without using bv_maker command" FORCE )
 # set( _BRAINVISA_COMPONENTS "${BRAINVISA_COMPONENTS}" CACHE STRING "BrainVISA components list" FORCE )
 
-list( INSERT CMAKE_PREFIX_PATH  0 "${CMAKE_BINARY_DIR}/cmake" "${CMAKE_SOURCE_DIR}/brainvisa-cmake/cmake" )
-list( INSERT CMAKE_MODULE_PATH 0 "${CMAKE_SOURCE_DIR}/brainvisa-cmake/cmake/modules" )
 find_package( brainvisa-cmake NO_POLICY_SCOPE )
+
+# Necessary for BRAINVISA_READ_PROJECT_INFO
+file( MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/build_files" )
 
 foreach( component ${BRAINVISA_COMPONENTS} )
     set( BRAINVISA_SOURCES_${component} "${CMAKE_SOURCE_DIR}/${component}" CACHE STRING "Sources directory for component ${component}" FORCE )

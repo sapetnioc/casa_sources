@@ -1,3 +1,8 @@
+'''
+Read components in components.yaml keeping items order even in Python 3.6
+This script is called from CMake with the appropriate current directory.
+'''
+
 import yaml
 from collections import OrderedDict
 
@@ -14,4 +19,4 @@ def ordered_load(stream, Loader=yaml.SafeLoader, object_pairs_hook=OrderedDict):
 
 
 components = ordered_load(open('components.yaml'))
-print(';'.join(name for name, component in components['repositories'].items() if component.get('brainvisa-cmake') != 'ignore'))
+print(';'.join(name for name, component in components['repositories'].items() if component.get('brainvisa-cmake') != 'ignore'),end='')
