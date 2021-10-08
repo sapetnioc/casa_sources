@@ -2,8 +2,8 @@ cmake_minimum_required( VERSION 3.0 )
 
 project( casa_source C CXX Fortran )
 
-list( INSERT CMAKE_PREFIX_PATH  0 "${CMAKE_BINARY_DIR}/cmake" "${CMAKE_SOURCE_DIR}/brainvisa-cmake/cmake" )
-list( INSERT CMAKE_MODULE_PATH 0 "${CMAKE_SOURCE_DIR}/brainvisa-cmake/cmake/modules" )
+list( INSERT CMAKE_PREFIX_PATH  0 "${CMAKE_BINARY_DIR}/cmake" "${CMAKE_SOURCE_DIR}/src/brainvisa-cmake/cmake" )
+list( INSERT CMAKE_MODULE_PATH 0 "${CMAKE_SOURCE_DIR}/src/brainvisa-cmake/cmake/modules" )
 
 find_package( python 3 )
 
@@ -49,7 +49,7 @@ find_package( brainvisa-cmake NO_POLICY_SCOPE )
 file( MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/build_files" )
 
 foreach( component ${BRAINVISA_COMPONENTS} )
-    set( BRAINVISA_SOURCES_${component} "${CMAKE_SOURCE_DIR}/${component}" CACHE STRING "Sources directory for component ${component}" FORCE )
+    set( BRAINVISA_SOURCES_${component} "${CMAKE_SOURCE_DIR}/src/${component}" CACHE STRING "Sources directory for component ${component}" FORCE )
     BRAINVISA_READ_PROJECT_INFO("${BRAINVISA_SOURCES_${component}}")
     set( ${component}_VERSION "${BRAINVISA_PACKAGE_VERSION_MAJOR}.${BRAINVISA_PACKAGE_VERSION_MINOR}" )
     set( ${component}_DIR "${BRAINVISA_SOURCES_${component}}/share/cmake" CACHE STRING "Directory used for find_package( ${component} )" FORCE )

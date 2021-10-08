@@ -8,7 +8,7 @@ import sys
 dir = osp.dirname(osp.abspath(sys.argv[0]))
 
 image = os.environ['SINGULARITY_CONTAINER']
-image_link = osp.join(build, 'image')
+image_link = osp.join(dir, 'image')
 if not osp.exists(image_link):
     os.symlink(image,
                image_link)
@@ -17,7 +17,7 @@ src = osp.join(dir, 'src')
 if not osp.exists(src):
     os.mkdir(src)
     subprocess.check_call(['vcs', 'import'], 
-                            stdin=open(osp.join(src, 'components.yaml')),
+                            stdin=open(osp.join(dir, 'components.yaml')),
                             cwd=src)
 bin =osp.join(dir, 'bin')
 if not osp.exists(bin):
