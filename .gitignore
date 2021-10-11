@@ -127,3 +127,8 @@ python/
 share/
 brainvisa/
 scripts/
+etc/
+matlab/
+tests/
+container_*.json
+home/

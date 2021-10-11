@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import json
 import os
 import os.path as osp
 import subprocess
@@ -7,9 +8,9 @@ import sys
 
 dir = osp.dirname(osp.abspath(sys.argv[0]))
 
-image = os.environ['SINGULARITY_CONTAINER']
 image_link = osp.join(dir, 'image')
 if not osp.exists(image_link):
+    image = os.environ['SINGULARITY_CONTAINER']
     os.symlink(image,
                image_link)
 
@@ -24,4 +25,41 @@ if not osp.exists(bin):
     os.mkdir(bin)
     os.symlink(osp.join(src, 'brainvisa-cmake', 'bin', 'bv2'),
                osp.join(bin, 'bv2'))
- 
+
+# MAke sure Python3 is called by default 
+ python = osp.join(bin, 'python')
+ if not osp.exists(python):
+     os.symlink('/usr/bin/python3', python)
+
+env_file = osp.join(dir, 'container_env.json')
+if not osp.exists(env_file):
+    env = {
+        'CASA_SRC': src,
+        'CASA_BUILD': dir,
+        'PREPEND_PATH': '{}/bin'.format(dir),
+        'LD_LIBRARY_PATH': '$LD_LIBRARY_PATH:{}/lib'.format(dir),
+        'PYTHONPATH': '$PYTHONPATH:{}/python'.format(dir),
+        'QT_API': 'pyqt5',
+    }
+    with open(env_file, 'w') as f:
+        json.dump(env, f, indent=4)
+
+
+home = osp.join(dir, 'home')
+if not osp.exists(home):
+    os.mkdir(home)
+
+mounts_file = osp.join(dir, 'container_mounts.json')
+if not osp.exists(mounts_file):
+    mounts = {
+        '/home': '/home',
+        '/mnt': '/mnt', 
+        '/media': '/media',
+        '/srv': '/srv',
+        '/neurospin': '/neurospin',
+        '/i2bm': '/i2bm',
+        '/nfs': '/nfs',
+        '/host': '/',
+    }
+    with open(mounts_file, 'w') as f:
+        json.dump(mounts, f, indent=4)

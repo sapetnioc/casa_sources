@@ -169,6 +169,7 @@ repositories:
         type: git
         url: https://bioproj.extra.cea.fr/git/brainvisa-commu/web
         version: master
+        brainvisa-cmake: ignore
     whasa-gpl:
         type: git
         url: https://github.com/cati-neuroimaging/whasa-gpl
