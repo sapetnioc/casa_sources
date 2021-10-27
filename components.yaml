@@ -178,3 +178,7 @@ repositories:
         type: git
         url: https://github.com/cati-neuroimaging/whasa-nonfree
         version: master
+    bv_services:
+        type: git
+        url: https://github.com/sapetnioc/bv_services
+        version: main
